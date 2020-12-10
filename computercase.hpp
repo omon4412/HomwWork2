@@ -5,15 +5,15 @@
 
 class ComputerCase
 {
-    struct Size
+    struct TSize
     {
         double width;
         double height;
         double depth;
     };
-    enum Color
+    enum TColor
     {
-            DEFAILT = -1,
+            DEFAILT,
             BLACK,
             DARKBLUE,
             DARKGREEN,
@@ -35,8 +35,8 @@ class ComputerCase
 private:
     std::string _name;
     std::string _operationSystem;
-    Size _size;
-    Color _color;
+    TSize _size;
+    TColor _color;
     bool _isDvdDrive;
     std::string _soundSystem;
     int _SSDcapacity;
@@ -44,6 +44,22 @@ private:
 
 public:
     ComputerCase();
+    void SetName(std::string name);
+    std::string GetName();
+    void SetOperationSystem(std::string os_name);
+    std::string GetOperationSystem();
+    void SetSize(TSize size);
+    TSize GetSize();
+    void SetColor(TColor name);
+    TColor GetColor();
+    void TakeDvdDrive();
+    void PutDvdDrive();
+    void SetSoundSystem(std::string sound_system_name);
+    std::string GetSoundSystem();
+    void SetSSDcapacity(int size);
+    int GetSSDcapacity();
+    void SetWeight(double weight);
+    int GetWeight();
     ~ComputerCase();
 };
 
