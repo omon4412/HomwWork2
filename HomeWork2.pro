@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        computercase.cpp \
         main.cpp
+
+HEADERS += \
+    computercase.hpp
