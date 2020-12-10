@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         computercase.cpp \
+        cpu.cpp \
         main.cpp
 
 HEADERS += \
-    computercase.hpp
+    computercase.hpp \
+    cpu.hpp
