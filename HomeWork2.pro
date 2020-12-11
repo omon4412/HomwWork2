@@ -6,8 +6,10 @@ CONFIG -= qt
 SOURCES += \
         computercase.cpp \
         cpu.cpp \
+        gpu.cpp \
         main.cpp
 
 HEADERS += \
     computercase.hpp \
-    cpu.hpp
+    cpu.hpp \
+    gpu.hpp

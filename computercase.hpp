@@ -44,21 +44,21 @@ private:
 
 public:
     ComputerCase();
-    void SetName(std::string name);
+    void SetName(const std::string name);
     std::string GetName();
-    void SetOperationSystem(std::string os_name);
+    void SetOperationSystem(const std::string os_name);
     std::string GetOperationSystem();
-    void SetSize(TSize size);
+    void SetSize(const TSize size);
     TSize GetSize();
-    void SetColor(TColor name);
+    void SetColor(const TColor name);
     TColor GetColor();
     void TakeDvdDrive();
     void PutDvdDrive();
-    void SetSoundSystem(std::string sound_system_name);
+    void SetSoundSystem(const std::string sound_system_name);
     std::string GetSoundSystem();
-    void SetSSDcapacity(int size);
+    void SetSSDcapacity(const int size);
     int GetSSDcapacity();
-    void SetWeight(double weight);
+    void SetWeight(const double weight);
     int GetWeight();
     ~ComputerCase();
 };
