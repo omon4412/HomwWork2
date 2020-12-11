@@ -1,17 +1,10 @@
 #ifndef RAM_HPP
 #define RAM_HPP
 
+#include "MemoryType.hpp"
+
 class RAM
 {
-    enum MemoryType
-    {
-        DDR1,
-        DDR2,
-        DDR3,
-        DDR4,
-        DDR5,
-        DDR6
-    };
 private:
     int _size;
     MemoryType _type;
@@ -24,6 +17,8 @@ public:
     int GetMemoryType();
     void SetFrequency(const int frequency);
     int GetFrequency();
+private:
+    int Initialization();
 };
 
 #endif // RAM_HPP

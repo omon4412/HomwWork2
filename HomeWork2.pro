@@ -11,6 +11,7 @@ SOURCES += \
         ram.cpp
 
 HEADERS += \
+    MemoryType.hpp \
     computercase.hpp \
     cpu.hpp \
     gpu.hpp \

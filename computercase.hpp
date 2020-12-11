@@ -6,16 +6,6 @@
 #include "gpu.hpp"
 #include "ram.hpp"
 
-enum MemoryType
-{
-    DDR1,
-    DDR2,
-    DDR3,
-    DDR4,
-    DDR5,
-    DDR6
-};
-
 class ComputerCase
 {
     struct TSize
@@ -57,18 +47,34 @@ private:
     std::string _soundSystem;
     int _SSDcapacity;
     double _weight;
+    bool _isActive;
 
 public:
     void Start();
-    void PullOutAccessory(const CPU cpu);
-    void PullOutAccessory(const GPU gpu);
-    void PullOutAccessory(const RAM ram);
+    void Stop();
+    CPU PullOutCPU();
+    GPU PullOutGPU();
+    RAM PullOutRAM();
     void InsertAccessory(const CPU cpu);
     void InsertAccessory(const GPU gpu);
     void InsertAccessory(const RAM ram);
 
+private:
+    int Initialization();
+
 public:
     ComputerCase();
+    ComputerCase(std::string name,
+                 std::string _operationSystem,
+                 CPU _cpu,
+                 GPU _gpu,
+                 RAM _ram,
+                 TSize _size,
+                 TColor _color,
+                 bool _isDvdDrive,
+                 std::string _soundSystem,
+                 int _SSDcapacity,
+                 double _weight);
     void SetName(const std::string name);
     std::string GetName();
     void SetOperationSystem(const std::string os_name);
@@ -85,6 +91,7 @@ public:
     int GetSSDcapacity();
     void SetWeight(const double weight);
     int GetWeight();
+    bool GetActiveStatus();
     ~ComputerCase();
 };
 

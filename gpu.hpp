@@ -2,18 +2,10 @@
 #define GPU_HPP
 
 #include <iostream>
+#include "MemoryType.hpp"
 
 class GPU
-{
-    enum MemoryType
-    {
-        DDR1,
-        DDR2,
-        DDR3,
-        DDR4,
-        DDR5,
-        DDR6
-    };
+{    
 private:
     std::string _manufacturer;
     std::string _model;
@@ -29,6 +21,8 @@ public:
     int GetMemoryCount();
     void SetMemoryType(const MemoryType &memoryType);
     MemoryType GetMemoryType();
+private:
+    int Initialization();
 };
 
 #endif // GPU_HPP

@@ -33,6 +33,8 @@ public:
     std::string GetSocket();
     void Setfrequency();
     double Getfrequency(const double frequency);
+private:
+    int Initialization();
 };
 
 #endif // CPU_HPP
