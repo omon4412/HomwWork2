@@ -4,6 +4,7 @@
 #include <iostream>
 #include "cpu.hpp"
 #include "gpu.hpp"
+#include "ram.hpp"
 
 enum MemoryType
 {
@@ -49,15 +50,22 @@ private:
     std::string _operationSystem;
     CPU _cpu;
     GPU _gpu;
-    int _RAMsize;
-    MemoryType _RAMtype;
-    int _RAMfrequency;
+    RAM _ram;
     TSize _size;
     TColor _color;
     bool _isDvdDrive;
     std::string _soundSystem;
     int _SSDcapacity;
     double _weight;
+
+public:
+    void Start();
+    void PullOutAccessory(const CPU cpu);
+    void PullOutAccessory(const GPU gpu);
+    void PullOutAccessory(const RAM ram);
+    void InsertAccessory(const CPU cpu);
+    void InsertAccessory(const GPU gpu);
+    void InsertAccessory(const RAM ram);
 
 public:
     ComputerCase();
@@ -67,8 +75,6 @@ public:
     std::string GetOperationSystem();
     void SetSize(const TSize size);
     TSize GetSize();
-    void SetRam(const int size);
-    std::string GetRam();
     void SetColor(const TColor name);
     TColor GetColor();
     void TakeDvdDrive();

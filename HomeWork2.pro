@@ -7,9 +7,11 @@ SOURCES += \
         computercase.cpp \
         cpu.cpp \
         gpu.cpp \
-        main.cpp
+        main.cpp \
+        ram.cpp
 
 HEADERS += \
     computercase.hpp \
     cpu.hpp \
-    gpu.hpp
+    gpu.hpp \
+    ram.hpp
