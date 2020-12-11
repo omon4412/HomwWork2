@@ -2,6 +2,18 @@
 #define COMPUTERCASE_HPP
 
 #include <iostream>
+#include "cpu.hpp"
+#include "gpu.hpp"
+
+enum MemoryType
+{
+    DDR1,
+    DDR2,
+    DDR3,
+    DDR4,
+    DDR5,
+    DDR6
+};
 
 class ComputerCase
 {
@@ -35,6 +47,11 @@ class ComputerCase
 private:
     std::string _name;
     std::string _operationSystem;
+    CPU _cpu;
+    GPU _gpu;
+    int _RAMsize;
+    MemoryType _RAMtype;
+    int _RAMfrequency;
     TSize _size;
     TColor _color;
     bool _isDvdDrive;
@@ -50,6 +67,8 @@ public:
     std::string GetOperationSystem();
     void SetSize(const TSize size);
     TSize GetSize();
+    void SetRam(const int size);
+    std::string GetRam();
     void SetColor(const TColor name);
     TColor GetColor();
     void TakeDvdDrive();

@@ -14,7 +14,6 @@ class GPU
         DDR5,
         DDR6
     };
-
 private:
     std::string _manufacturer;
     std::string _model;
