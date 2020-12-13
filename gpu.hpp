@@ -14,6 +14,8 @@ private:
     MemoryType _memoryType;
 public:
     GPU();
+    GPU(std::string manufacturer, std::string model, int memoryCount, MemoryType memoryType);
+    GPU(const GPU &other);
     void SetManufacturer(const std::string manufacturer);
     std::string GetManufacturer();
     void SetModel(const std::string model);

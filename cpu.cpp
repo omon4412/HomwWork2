@@ -7,6 +7,32 @@ CPU::CPU() : _manufacturer(""), _type(""), _model(""),
 
 }
 
+CPU::CPU(std::string manufacturer, std::string type, std::string model,
+         int number_of_cores, double maximum_clock_speed, int cache_memory,
+         std::string socket, double frequency)
+{
+    _manufacturer = manufacturer;
+    _type = type;
+    _model = model;
+    _number_of_cores = number_of_cores;
+    _maximum_clock_speed = maximum_clock_speed;
+    _cache_memory = cache_memory;
+    _socket = socket;
+    _frequency = frequency;
+}
+
+CPU::CPU(const CPU &other)
+{
+    _manufacturer = other._manufacturer;
+    _type = other._type;
+    _model = other._model;
+    _number_of_cores = other._number_of_cores;
+    _maximum_clock_speed = other._maximum_clock_speed;
+    _cache_memory = other._cache_memory;
+    _socket = other._socket;
+    _frequency = other._frequency;
+}
+
 std::string CPU::GetCPUinfo()
 {
     if(_manufacturer == "")

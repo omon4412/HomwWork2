@@ -12,6 +12,8 @@ private:
     int _frequency;
 public:
     RAM();
+    RAM(int size, MemoryType type, int frequency);
+    RAM(const RAM &other);
     void SetSize(const int size);
     int GetSize();
     MemoryType SetMemoryType(const MemoryType type);

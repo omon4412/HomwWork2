@@ -75,6 +75,8 @@ public:
                  std::string soundSystem,
                  int SSDcapacity,
                  double weight);
+    ComputerCase(const ComputerCase &other);
+    ComputerCase operator=(const ComputerCase &other);
     void SetName(const std::string name);
     std::string GetName();
     void SetOperationSystem(const std::string os_name);

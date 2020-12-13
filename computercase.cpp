@@ -32,6 +32,37 @@ ComputerCase::ComputerCase(std::string name, std::string _operationSystem, CPU c
     _weight = weight;
 }
 
+ComputerCase::ComputerCase(const ComputerCase &other)
+{
+    _name = other._name;
+    this->_operationSystem  = other._operationSystem;
+    this->cpu = other.cpu;
+    this->gpu = other.gpu;
+    this->ram = other.ram;
+    _size = other._size;
+    _color = other._color;
+    _isDvdDrive = other._isDvdDrive;
+    _soundSystem = other._soundSystem;
+    _SSDcapacity = other._SSDcapacity;
+    _weight = other._weight;
+}
+
+ComputerCase ComputerCase::operator=(const ComputerCase &other)
+{
+    _name = other._name;
+    this->_operationSystem  = other._operationSystem;
+    this->cpu = other.cpu;
+    this->gpu = other.gpu;
+    this->ram = other.ram;
+    _size = other._size;
+    _color = other._color;
+    _isDvdDrive = other._isDvdDrive;
+    _soundSystem = other._soundSystem;
+    _SSDcapacity = other._SSDcapacity;
+    _weight = other._weight;
+    return *this;
+}
+
 void ComputerCase::SetName(const std::string name)
 {
     _name = name;

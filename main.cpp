@@ -9,6 +9,6 @@ int main()
     setlocale(LC_ALL, "russian");
 
     ComputerCase cp;
-    //cout<<cp._cpu.;
+    cout<<cp.GetActiveStatus();
     return 0;
 }
