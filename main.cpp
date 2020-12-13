@@ -1,9 +1,11 @@
 #include <iostream>
+#include "computercase.hpp"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    ComputerCase cp;
+    cout<<cp.GetActiveStatus();
     return 0;
 }
