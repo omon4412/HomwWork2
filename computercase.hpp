@@ -38,9 +38,6 @@ class ComputerCase
 private:
     std::string _name;
     std::string _operationSystem;
-    CPU _cpu;
-    GPU _gpu;
-    RAM _ram;
     TSize _size;
     TColor _color;
     bool _isDvdDrive;
@@ -48,7 +45,10 @@ private:
     int _SSDcapacity;
     double _weight;
     bool _isActive;
-
+public:
+    CPU cpu;
+    GPU gpu;
+    RAM ram;
 public:
     void Start();
     void Stop();
@@ -66,15 +66,15 @@ public:
     ComputerCase();
     ComputerCase(std::string name,
                  std::string _operationSystem,
-                 CPU _cpu,
-                 GPU _gpu,
-                 RAM _ram,
-                 TSize _size,
-                 TColor _color,
-                 bool _isDvdDrive,
-                 std::string _soundSystem,
-                 int _SSDcapacity,
-                 double _weight);
+                 CPU cpu,
+                 GPU gpu,
+                 RAM ram,
+                 TSize size,
+                 TColor color,
+                 bool isDvdDrive,
+                 std::string soundSystem,
+                 int SSDcapacity,
+                 double weight);
     void SetName(const std::string name);
     std::string GetName();
     void SetOperationSystem(const std::string os_name);

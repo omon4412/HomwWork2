@@ -7,6 +7,7 @@
 class GPU
 {    
 private:
+    friend class ComputerCase;
     std::string _manufacturer;
     std::string _model;
     int _memoryCount;
@@ -21,6 +22,7 @@ public:
     int GetMemoryCount();
     void SetMemoryType(const MemoryType &memoryType);
     MemoryType GetMemoryType();
+    GPU operator=(const GPU &other);
 private:
     int Initialization();
 };

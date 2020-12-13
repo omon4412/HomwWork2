@@ -1,11 +1,35 @@
 #include "computercase.hpp"
 
-ComputerCase::ComputerCase() : _name(""), _operationSystem(""), _cpu(), _gpu(), _ram(),
+int ComputerCase::Initialization()
+{
+    cpu.Initialization();
+    return 0;
+}
+
+ComputerCase::ComputerCase() : _name(""), _operationSystem(""),
                                 _size({100,50,100}), _color(TColor::WHITE),
                                 _isDvdDrive(false), _soundSystem(""),
-                                _SSDcapacity(0), _weight(7), _isActive(false)
+                                _SSDcapacity(0), _weight(7), _isActive(false),
+                                cpu(), gpu(), ram()
 {
 
+}
+
+ComputerCase::ComputerCase(std::string name, std::string _operationSystem, CPU cpu, GPU gpu, RAM ram,
+                           ComputerCase::TSize size, ComputerCase::TColor color, bool isDvdDrive,
+                           std::string soundSystem, int SSDcapacity, double weight)
+{
+    _name = name;
+    this->_operationSystem  = _operationSystem;
+    this->cpu = cpu;
+    this->gpu = gpu;
+    this->ram = ram;
+    _size = size;
+    _color = color;
+    _isDvdDrive = isDvdDrive;
+    _soundSystem = soundSystem;
+    _SSDcapacity = SSDcapacity;
+    _weight = weight;
 }
 
 void ComputerCase::SetName(const std::string name)

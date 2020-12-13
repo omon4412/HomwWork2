@@ -6,6 +6,7 @@
 class RAM
 {
 private:
+    friend class ComputerCase;
     int _size;
     MemoryType _type;
     int _frequency;
@@ -17,6 +18,7 @@ public:
     int GetMemoryType();
     void SetFrequency(const int frequency);
     int GetFrequency();
+    RAM operator=(const RAM &other);
 private:
     int Initialization();
 };
