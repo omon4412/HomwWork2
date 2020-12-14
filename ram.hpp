@@ -21,6 +21,8 @@ public:
     RAM operator=(const RAM &other);
 private:
     int Initialization();
+    RAM PullOut();
+    void InsertIn(const RAM &ram);
 };
 
 #endif // RAM_HPP

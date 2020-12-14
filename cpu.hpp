@@ -34,6 +34,8 @@ public:
     CPU operator=(const CPU &other);
 private:
     int Initialization();
+    CPU PullOut();
+    void InsertIn(const CPU &cpu);
 };
 
 #endif // CPU_HPP

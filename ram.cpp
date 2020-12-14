@@ -55,3 +55,19 @@ int RAM::Initialization()
 {
     return 0;
 }
+
+RAM RAM::PullOut()
+{
+    RAM returned(*this);
+    _size = 0;
+    _type = MemoryType::None;
+    _frequency = 0;
+    return returned;
+}
+
+void RAM::InsertIn(const RAM &ram)
+{
+    _size = ram._size;
+    _type = ram._type;
+    _frequency = ram._frequency;
+}

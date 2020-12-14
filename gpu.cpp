@@ -64,3 +64,21 @@ int GPU::Initialization()
 {
     return 0;
 }
+
+GPU GPU::PullOut()
+{
+    GPU returned(*this);
+    _manufacturer = "";
+    _model = "";
+    _memoryCount = 0;
+    _memoryType = MemoryType::None;
+    return returned;
+}
+
+void GPU::InsertIn(const GPU &gpu)
+{
+    _manufacturer = gpu._manufacturer;
+    _model = gpu._model;
+    _memoryCount = gpu._memoryCount;
+    _memoryType = gpu._memoryType;
+}

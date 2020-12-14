@@ -56,9 +56,9 @@ public:
     CPU PullOutCPU();
     GPU PullOutGPU();
     RAM PullOutRAM();
-    void InsertAccessory(const CPU cpu);
-    void InsertAccessory(const GPU gpu);
-    void InsertAccessory(const RAM ram);
+    void InsertAccessory(const CPU &cpu);
+    void InsertAccessory(const GPU &gpu);
+    void InsertAccessory(const RAM &ram);
 
 private:
     int Initialization();

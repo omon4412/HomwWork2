@@ -23,6 +23,8 @@ public:
     GPU operator=(const GPU &other);
 private:
     int Initialization();
+    GPU PullOut();
+    void InsertIn(const GPU &gpu);
 };
 
 #endif // GPU_HPP

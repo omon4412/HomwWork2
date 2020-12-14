@@ -121,3 +121,29 @@ int CPU::Initialization()
     return 0;
 }
 
+CPU CPU::PullOut()
+{
+    CPU returned(*this);
+    _manufacturer = "";
+    _type = "";
+    _model = "";
+    _number_of_cores = 0;
+    _maximum_clock_speed = 0;
+    _cache_memory = 0;
+    _socket = "";
+    _frequency = 0;
+    return returned;
+}
+
+void CPU::InsertIn(const CPU &cpu)
+{
+    _manufacturer = cpu._manufacturer;
+    _type = cpu._type;
+    _model = cpu._model;
+    _number_of_cores = cpu._number_of_cores;
+    _maximum_clock_speed = cpu._maximum_clock_speed;
+    _cache_memory = cpu._cache_memory;
+    _socket = cpu._socket;
+    _frequency = cpu._frequency;
+}
+

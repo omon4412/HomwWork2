@@ -1,5 +1,43 @@
 #include "computercase.hpp"
 
+void ComputerCase::Stop()
+{
+    _isActive = false;
+}
+
+CPU ComputerCase::PullOutCPU()
+{
+    _isActive = false;
+    return  cpu.PullOut();
+}
+
+GPU ComputerCase::PullOutGPU()
+{
+    _isActive = false;
+    return  gpu.PullOut();
+}
+
+RAM ComputerCase::PullOutRAM()
+{
+    _isActive = false;
+    return  ram.PullOut();
+}
+
+void ComputerCase::InsertAccessory(const CPU &cpu)
+{
+    this->cpu.InsertIn(cpu);
+}
+
+void ComputerCase::InsertAccessory(const GPU &gpu)
+{
+    this->gpu.InsertIn(gpu);
+}
+
+void ComputerCase::InsertAccessory(const RAM &ram)
+{
+    this->ram.InsertIn(ram);
+}
+
 int ComputerCase::Initialization()
 {
     cpu.Initialization();
