@@ -1,3 +1,4 @@
+#include <iomanip>
 #include "cpu.hpp"
 
 CPU::CPU() : _manufacturer(""), _type(""), _model(""),
@@ -41,12 +42,25 @@ std::string CPU::GetCPUinfo()
     }
     return "Производитель                 - " + _manufacturer +
         "\nТип процессора                - " + _type +
-        "\nМодель                        - " + _model;
-           // "\nКоличество ядер               - " + std::to_string(_number_of_cores) +
-           // "\nМаксимальная тактовая частота - " + std::to_string(_maximum_clock_speed) +
-           // "\nКэш-память                    - " + std::to_string(_cache_memory) +
-           // "\nСокет                         - " + _socket +
-           // "\nЧастота процессора            - " + std::to_string(_frequency);
+        "\nМодель                        - " + _model +
+            "\nКоличество ядер               - " + std::to_string(_number_of_cores) +
+            "\nМаксимальная тактовая частота - " + std::to_string(_maximum_clock_speed) +
+            "\nКэш-память                    - " + std::to_string(_cache_memory) +
+            "\nСокет                         - " + _socket +
+            "\nЧастота процессора            - " + std::to_string(_frequency);
+}
+
+std::ostream &operator<< (std::ostream &out, const CPU &cpu)
+{
+    out << "\tПроцессор: " << std::endl;
+    out << "\t\tПроизводитель                 - " << cpu._manufacturer << std::endl;
+    out << "\t\tТип процессора                - " << cpu._type << std::endl;
+    out << "\t\tМодель процессора             - " << cpu._model << std::endl;
+    out << "\t\tКоличество ядер               - " << cpu._number_of_cores << std::endl;
+    out << "\t\tМаксимальная тактовая частота - " << cpu._maximum_clock_speed << " ГГц" << std::endl;
+    out << "\t\tСокет                         - " << cpu._socket << std::endl;
+    out << "\t\tЧастота процессора            - " << cpu._frequency << " ГГц" << std::endl;
+    return out;
 }
 
 std::string CPU::GetManufacturer() const

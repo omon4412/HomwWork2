@@ -21,6 +21,7 @@ public:
     CPU(std::string manufacturer, std::string type, std::string model,
         int number_of_cores, double maximum_clock_speed, int cache_memory, std::string socket, double frequency);
     CPU(const CPU &other);
+    friend std::ostream &operator<< (std::ostream &out, const CPU &cpu);
     std::string GetCPUinfo();
     std::string GetManufacturer() const;
     std::string GetType() const;

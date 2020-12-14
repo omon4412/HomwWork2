@@ -15,6 +15,7 @@ public:
     GPU();
     GPU(std::string manufacturer, std::string model, int memoryCount, MemoryType memoryType);
     GPU(const GPU &other);
+    friend std::ostream& operator<< (std::ostream &out, const GPU &gpu);
     std::string GetManufacturer() const;
     std::string GetModel() const;
     int GetMemoryCount() const;

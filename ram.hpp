@@ -14,6 +14,7 @@ public:
     RAM();
     RAM(int size, MemoryType type, int frequency);
     RAM(const RAM &other);
+    friend std::ostream& operator<< (std::ostream &out, const RAM &ram);
     int GetSize() const;
     MemoryType GetMemoryType() const;
     int GetFrequency() const;

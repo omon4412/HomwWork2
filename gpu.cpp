@@ -50,6 +50,16 @@ GPU GPU::operator=(const GPU &other)
     return *this;
 }
 
+std::ostream& operator<< (std::ostream &out, const GPU &gpu)
+{
+    out << "\tВидеокарта: " << std::endl;
+    out << "\t\tПроизводитель                 - " << gpu._manufacturer << std::endl;
+    out << "\t\tГрафический контроллер        - " << gpu._model << std::endl;
+    out << "\t\tОбъем видеопамяти             - " << gpu._memoryCount << " ГБ" << std::endl;
+    out << "\t\tТип видеопамяти               - " << gpu._memoryType << std::endl;
+    return out;
+}
+
 int GPU::Initialization()
 {
     return 0;

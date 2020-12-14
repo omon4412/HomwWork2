@@ -19,6 +19,15 @@ RAM::RAM(const RAM &other)
     _frequency = other._frequency;
 }
 
+std::ostream& operator<< (std::ostream &out, const RAM &ram)
+{
+    out << "\tОперативная память: " << std::endl;
+    out << "\t\tОбъём пямяти                  - " << ram._size << " ГБ" << std::endl;
+    out << "\t\tТип памяти                    - " << ram._type << std::endl;
+    out << "\t\tЧастота памяти                - " << ram._frequency << " МГц" << std::endl;
+    return out;
+}
+
 int RAM::GetSize() const
 {
     return _size;
