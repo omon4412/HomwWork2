@@ -9,6 +9,7 @@ SOURCES += \
         cpu.cpp \
         gpu.cpp \
         main.cpp \
+        processorunit.cpp \
         ram.cpp
 
 HEADERS += \
@@ -17,4 +18,5 @@ HEADERS += \
     computercase.hpp \
     cpu.hpp \
     gpu.hpp \
+    processorunit.hpp \
     ram.hpp

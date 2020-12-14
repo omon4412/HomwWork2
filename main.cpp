@@ -1,6 +1,7 @@
 #include <iostream>
 #include <clocale>
 #include "computercase.hpp"
+#include "processorunit.hpp"
 
 using namespace std;
 
@@ -22,5 +23,6 @@ int main()
     cout << testt.GetActiveStatus() <<endl;
     cout << testt.Stop() << endl;
     cout << testt.GetActiveStatus() <<endl;
+
     return 0;
 }

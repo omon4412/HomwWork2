@@ -1,9 +1,10 @@
 #include "gpu.hpp"
 #include "PostCodes.hpp"
 
-GPU::GPU() : _manufacturer(""), _model(""), _memoryCount(0), _memoryType(MemoryType::None)
+GPU::GPU() : _memoryCount(0), _memoryType(MemoryType::None)
 {
-
+    _manufacturer = "";
+    _model = "";
 }
 
 GPU::GPU(std::string manufacturer, std::string model, int memoryCount, MemoryType memoryType)

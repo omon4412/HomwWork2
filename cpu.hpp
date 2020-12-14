@@ -2,14 +2,13 @@
 #define CPU_HPP
 
 #include <iostream>
+#include "processorunit.hpp"
 
-class CPU
+class CPU : ProcessorUnit
 {
 private:
     friend class ComputerCase;
-    std::string _manufacturer;
     std::string _type;
-    std::string _model;
     int _number_of_cores;
     double _maximum_clock_speed;
     int _cache_memory;

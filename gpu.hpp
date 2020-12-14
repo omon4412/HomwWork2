@@ -2,13 +2,12 @@
 #define GPU_HPP
 
 #include "MemoryType.hpp"
+#include "processorunit.hpp"
 
-class GPU
+class GPU : ProcessorUnit
 {    
 private:
     friend class ComputerCase;
-    std::string _manufacturer;
-    std::string _model;
     int _memoryCount;
     MemoryType _memoryType;
 public:

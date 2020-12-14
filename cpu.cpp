@@ -2,11 +2,11 @@
 #include "cpu.hpp"
 #include "PostCodes.hpp"
 
-CPU::CPU() : _manufacturer(""), _type(""), _model(""),
-              _number_of_cores(0), _maximum_clock_speed(0),
+CPU::CPU() : _type(""), _number_of_cores(0), _maximum_clock_speed(0),
               _cache_memory(0), _socket(""), _frequency(0)
 {
-
+    this->_manufacturer = "";
+    this->_model = "";
 }
 
 CPU::CPU(std::string manufacturer, std::string type, std::string model,
