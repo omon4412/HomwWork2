@@ -1,4 +1,5 @@
 #include "ram.hpp"
+#include "PostCodes.hpp"
 
 RAM::RAM() : _size(0), _type(MemoryType::None), _frequency(0)
 {
@@ -53,6 +54,14 @@ RAM RAM::operator=(const RAM &other)
 
 int RAM::Initialization()
 {
+    if((_size == 0) && (_type == MemoryType::None) && (_frequency == 0))
+    {
+        return PostCodes::NoRam;
+    }
+    else if((_size == 0) || (_type == MemoryType::None) || (_frequency == 0))
+    {
+        return PostCodes::RAMDataReadError;
+    }
     return 0;
 }
 

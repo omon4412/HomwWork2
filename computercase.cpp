@@ -1,8 +1,28 @@
+#include <iostream>
+#include <sstream>
+#include <string>
 #include "computercase.hpp"
 
-void ComputerCase::Stop()
+std::string ComputerCase::Start()
+{
+    int post_result = Initialization();
+    if(post_result == 0)
+    {
+        _isActive = true;
+        return "Запуск произошёл";
+    }
+    std::stringstream stream;
+    stream << std::hex << post_result;
+    std::string result(stream.str());
+    for (auto &c : result)
+        c = std::toupper(c);
+    return "0x" + result;
+}
+
+std::string ComputerCase::Stop()
 {
     _isActive = false;
+    return "Выключение";
 }
 
 CPU ComputerCase::PullOutCPU()
@@ -40,7 +60,12 @@ void ComputerCase::InsertAccessory(const RAM &ram)
 
 int ComputerCase::Initialization()
 {
-    cpu.Initialization();
+    if(cpu.Initialization() != 0)
+    return cpu.Initialization();
+    if(ram.Initialization() != 0)
+    return ram.Initialization();
+    if(gpu.Initialization() != 0)
+    return gpu.Initialization();
     return 0;
 }
 
@@ -220,9 +245,13 @@ int ComputerCase::GetWeight()
     return _weight;
 }
 
-bool ComputerCase::GetActiveStatus()
+std::string ComputerCase::GetActiveStatus()
 {
-    return _isActive;
+    if(_isActive)
+    {
+        return "Работает";
+    }
+    return "Не работает";
 }
 
 ComputerCase::~ComputerCase()

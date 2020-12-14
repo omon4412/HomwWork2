@@ -1,4 +1,5 @@
 #include "gpu.hpp"
+#include "PostCodes.hpp"
 
 GPU::GPU() : _manufacturer(""), _model(""), _memoryCount(0), _memoryType(MemoryType::None)
 {
@@ -62,6 +63,16 @@ std::ostream& operator<< (std::ostream &out, const GPU &gpu)
 
 int GPU::Initialization()
 {
+    if((_manufacturer == "") && (_model == "")&&
+            (_memoryCount == 0)&&(_memoryType == MemoryType::None))
+    {
+        return PostCodes::NoGraphicProcessor;
+    }
+    else if((_manufacturer == "") || (_model == "") ||
+            (_memoryCount == 0) || (_memoryType == MemoryType::None))
+    {
+        return PostCodes::GPUDataReadError;
+    }
     return 0;
 }
 

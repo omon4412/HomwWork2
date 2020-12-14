@@ -51,8 +51,8 @@ public:
     GPU gpu;
     RAM ram;
 public:
-    void Start();
-    void Stop();
+    std::string Start();
+    std::string Stop();
     CPU PullOutCPU();
     GPU PullOutGPU();
     RAM PullOutRAM();
@@ -95,7 +95,7 @@ public:
     int GetSSDcapacity();
     void SetWeight(const double weight);
     int GetWeight();
-    bool GetActiveStatus();
+    std::string GetActiveStatus();
     ~ComputerCase();
 };
 

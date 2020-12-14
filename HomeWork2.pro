@@ -13,6 +13,7 @@ SOURCES += \
 
 HEADERS += \
     MemoryType.hpp \
+    PostCodes.hpp \
     computercase.hpp \
     cpu.hpp \
     gpu.hpp \
