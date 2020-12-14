@@ -21,6 +21,26 @@ GPU::GPU(const GPU &other)
     _memoryType = other._memoryType;
 }
 
+std::string GPU::GetManufacturer() const
+{
+    return _manufacturer;
+}
+
+std::string GPU::GetModel() const
+{
+    return _model;
+}
+
+int GPU::GetMemoryCount() const
+{
+    return _memoryCount;
+}
+
+MemoryType GPU::GetMemoryType() const
+{
+    return _memoryType;
+}
+
 GPU GPU::operator=(const GPU &other)
 {
     _manufacturer = other._manufacturer;

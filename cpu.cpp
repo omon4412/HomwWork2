@@ -39,52 +39,52 @@ std::string CPU::GetCPUinfo()
     {
         return "Просессор отсутствует!";
     }
-    return "Производитель                 - " +_manufacturer +
-            "\nТип процессора                - " + _type +
-            "\nМодель                        - " +_model +
-            "\nКоличество ядер               - " + std::to_string(_number_of_cores) +
-            "\nМаксимальная тактовая частота - " + std::to_string(_maximum_clock_speed) +
-            "\nКэш-память                    - " + std::to_string(_cache_memory) +
-            "\nСокет                         - " + _socket +
-            "\nЧастота процессора            - " + std::to_string(_frequency);
+    return "Производитель                 - " + _manufacturer +
+        "\nТип процессора                - " + _type +
+        "\nМодель                        - " + _model;
+           // "\nКоличество ядер               - " + std::to_string(_number_of_cores) +
+           // "\nМаксимальная тактовая частота - " + std::to_string(_maximum_clock_speed) +
+           // "\nКэш-память                    - " + std::to_string(_cache_memory) +
+           // "\nСокет                         - " + _socket +
+           // "\nЧастота процессора            - " + std::to_string(_frequency);
 }
 
-std::string CPU::GetManufacturer()
+std::string CPU::GetManufacturer() const
 {
     return _manufacturer;
 }
 
-std::string CPU::GetType()
+std::string CPU::GetType() const
 {
     return _type;
 }
 
-std::string CPU::GetModel()
+std::string CPU::GetModel() const
 {
     return _model;
 }
 
-int CPU::GetNumberOfCores()
+int CPU::GetNumberOfCores() const
 {
     return _number_of_cores;
 }
 
-double CPU::GetMaximumClockSpeed()
+double CPU::GetMaximumClockSpeed() const
 {
     return _maximum_clock_speed;
 }
 
-int CPU::GetCacheMemory()
+int CPU::GetCacheMemory() const
 {
     return _cache_memory;
 }
 
-std::string CPU::GetSocket()
+std::string CPU::GetSocket() const
 {
     return _socket;
 }
 
-double CPU::SetFrequency()
+double CPU::GetFrequency() const
 {
     return _frequency;
 }

@@ -19,6 +19,21 @@ RAM::RAM(const RAM &other)
     _frequency = other._frequency;
 }
 
+int RAM::GetSize() const
+{
+    return _size;
+}
+
+MemoryType RAM::GetMemoryType() const
+{
+    return _type;
+}
+
+int RAM::GetFrequency() const
+{
+    return _frequency;
+}
+
 RAM RAM::operator=(const RAM &other)
 {
     _size = other._size;

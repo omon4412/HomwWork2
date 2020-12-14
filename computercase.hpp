@@ -8,6 +8,7 @@
 
 class ComputerCase
 {
+public:
     struct TSize
     {
         double width;
@@ -77,6 +78,7 @@ public:
                  double weight);
     ComputerCase(const ComputerCase &other);
     ComputerCase operator=(const ComputerCase &other);
+    friend std::ostream& operator<< (std::ostream &out, const ComputerCase &computerCase);
     void SetName(const std::string name);
     std::string GetName();
     void SetOperationSystem(const std::string os_name);
@@ -96,5 +98,6 @@ public:
     bool GetActiveStatus();
     ~ComputerCase();
 };
+
 
 #endif // COMPUTERCASE_HPP

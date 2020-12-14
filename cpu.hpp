@@ -22,14 +22,14 @@ public:
         int number_of_cores, double maximum_clock_speed, int cache_memory, std::string socket, double frequency);
     CPU(const CPU &other);
     std::string GetCPUinfo();
-    std::string GetManufacturer();
-    std::string GetType();
-    std::string GetModel();
-    int GetNumberOfCores();
-    double GetMaximumClockSpeed();
-    int GetCacheMemory();
-    std::string GetSocket();
-    double SetFrequency();
+    std::string GetManufacturer() const;
+    std::string GetType() const;
+    std::string GetModel() const;
+    int GetNumberOfCores() const;
+    double GetMaximumClockSpeed() const;
+    int GetCacheMemory() const;
+    std::string GetSocket() const;
+    double GetFrequency() const;
     CPU operator=(const CPU &other);
 private:
     int Initialization();

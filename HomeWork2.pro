@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        MemoryType.cpp \
         computercase.cpp \
         cpu.cpp \
         gpu.cpp \

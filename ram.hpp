@@ -14,12 +14,9 @@ public:
     RAM();
     RAM(int size, MemoryType type, int frequency);
     RAM(const RAM &other);
-    void SetSize(const int size);
-    int GetSize();
-    MemoryType SetMemoryType(const MemoryType type);
-    int GetMemoryType();
-    void SetFrequency(const int frequency);
-    int GetFrequency();
+    int GetSize() const;
+    MemoryType GetMemoryType() const;
+    int GetFrequency() const;
     RAM operator=(const RAM &other);
 private:
     int Initialization();
