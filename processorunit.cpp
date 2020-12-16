@@ -11,3 +11,12 @@ ProcessorUnit::ProcessorUnit(std::string manufacturer, std::string model) :
 
 }
 
+std::string ProcessorUnit::GetManufacturer() const
+{
+    return _manufacturer;
+}
+
+std::string ProcessorUnit::GetModel() const
+{
+    return _model;
+}

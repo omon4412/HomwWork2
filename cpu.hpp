@@ -4,7 +4,7 @@
 #include <iostream>
 #include "processorunit.hpp"
 
-class CPU : ProcessorUnit
+class CPU : public ProcessorUnit
 {
 private:
     friend class ComputerCase;
@@ -22,10 +22,8 @@ public:
         int number_of_cores, double maximum_clock_speed, int cache_memory, std::string socket, double frequency);
     CPU(const CPU &other);
     friend std::ostream &operator<< (std::ostream &out, const CPU &cpu);
-    std::string GetCPUinfo();
-    std::string GetManufacturer() const;
-    std::string GetType() const;
-    std::string GetModel() const;
+    std::string GetCPUinfo() const;
+    std::string GetType() const;    
     int GetNumberOfCores() const;
     double GetMaximumClockSpeed() const;
     int GetCacheMemory() const;

@@ -4,7 +4,7 @@
 #include "MemoryType.hpp"
 #include "processorunit.hpp"
 
-class GPU : ProcessorUnit
+class GPU : public ProcessorUnit
 {    
 private:
     friend class ComputerCase;
@@ -15,8 +15,6 @@ public:
     GPU(std::string manufacturer, std::string model, int memoryCount, MemoryType memoryType);
     GPU(const GPU &other);
     friend std::ostream& operator<< (std::ostream &out, const GPU &gpu);
-    std::string GetManufacturer() const;
-    std::string GetModel() const;
     int GetMemoryCount() const;
     MemoryType GetMemoryType() const;
     GPU operator=(const GPU &other);

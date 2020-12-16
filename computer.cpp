@@ -154,3 +154,25 @@ std::string Computer::GetActiveStatus()
     }
     return "Не работает";
 }
+
+CPU Computer::PullOutCPU()
+{
+    _isActive = false;
+    return  cpu.PullOut();
+}
+
+RAM Computer::PullOutRAM()
+{
+    _isActive = false;
+    return  ram.PullOut();
+}
+
+void Computer::InsertAccessory(const CPU &cpu)
+{
+    this->cpu.InsertIn(cpu);
+}
+
+void Computer::InsertAccessory(const RAM &ram)
+{
+    this->ram.InsertIn(ram);
+}

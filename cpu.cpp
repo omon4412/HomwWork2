@@ -27,7 +27,7 @@ CPU::CPU(const CPU &other) : ProcessorUnit(other._manufacturer,other._model)
     _frequency = other._frequency;
 }
 
-std::string CPU::GetCPUinfo()
+std::string CPU::GetCPUinfo() const
 {
     if(_manufacturer == "")
     {
@@ -56,19 +56,9 @@ std::ostream &operator<< (std::ostream &out, const CPU &cpu)
     return out;
 }
 
-std::string CPU::GetManufacturer() const
-{
-    return _manufacturer;
-}
-
 std::string CPU::GetType() const
 {
     return _type;
-}
-
-std::string CPU::GetModel() const
-{
-    return _model;
 }
 
 int CPU::GetNumberOfCores() const

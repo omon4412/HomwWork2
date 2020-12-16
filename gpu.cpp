@@ -23,16 +23,6 @@ GPU::GPU(const GPU &other) : ProcessorUnit(other)
     _memoryType = other._memoryType;
 }
 
-std::string GPU::GetManufacturer() const
-{
-    return _manufacturer;
-}
-
-std::string GPU::GetModel() const
-{
-    return _model;
-}
-
 int GPU::GetMemoryCount() const
 {
     return _memoryCount;

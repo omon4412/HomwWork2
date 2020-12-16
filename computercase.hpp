@@ -12,6 +12,7 @@ private:
     std::string _soundSystem;
     int _SSDcapacity;    
 public:   
+    using Computer::InsertAccessory; //разрешение перегружать родительский метод, а не переопределять
     GPU gpu;
     GPU PullOutGPU();   
     void InsertAccessory(const GPU &gpu);

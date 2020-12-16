@@ -1,37 +1,15 @@
 #include <iostream>
 #include "computercase.hpp"
 
-CPU Computer::PullOutCPU()
-{
-    _isActive = false;
-    return  cpu.PullOut();
-}
-
 GPU ComputerCase::PullOutGPU()
 {
     _isActive = false;
     return  gpu.PullOut();
 }
 
-RAM Computer::PullOutRAM()
-{
-    _isActive = false;
-    return  ram.PullOut();
-}
-
-void Computer::InsertAccessory(const CPU &cpu)
-{
-    this->cpu.InsertIn(cpu);
-}
-
 void ComputerCase::InsertAccessory(const GPU &gpu)
 {
     this->gpu.InsertIn(gpu);
-}
-
-void Computer::InsertAccessory(const RAM &ram)
-{
-    this->ram.InsertIn(ram);
 }
 
 int ComputerCase::Initialization()
