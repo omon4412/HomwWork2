@@ -32,7 +32,7 @@ public:
     double GetFrequency() const;
     CPU operator=(const CPU &other);
 private:
-    int Initialization();
+    int Initialization() override;
     CPU PullOut();
     void InsertIn(const CPU &cpu);
 };

@@ -15,7 +15,7 @@ GPU::GPU(std::string manufacturer, std::string model, int memoryCount, MemoryTyp
     _memoryType = memoryType;
 }
 
-GPU::GPU(const GPU &other)
+GPU::GPU(const GPU &other) : ProcessorUnit(other)
 {
     _manufacturer = other._manufacturer;
     _model = other._model;

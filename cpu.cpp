@@ -2,32 +2,27 @@
 #include "cpu.hpp"
 #include "PostCodes.hpp"
 
-CPU::CPU() : _type(""), _number_of_cores(0), _maximum_clock_speed(0),
+CPU::CPU() : ProcessorUnit(), _type(""), _number_of_cores(0), _maximum_clock_speed(0),
               _cache_memory(0), _socket(""), _frequency(0)
 {
-    this->_manufacturer = "";
-    this->_model = "";
+
 }
 
 CPU::CPU(std::string manufacturer, std::string type, std::string model,
          int number_of_cores, double maximum_clock_speed, int cache_memory,
-         std::string socket, double frequency)
+         std::string socket, double frequency) :
+    ProcessorUnit(manufacturer, model), _type(type), _number_of_cores(number_of_cores),
+    _maximum_clock_speed(maximum_clock_speed), _cache_memory(cache_memory),
+    _socket(socket), _frequency(frequency)
 {
-    _manufacturer = manufacturer;
-    _type = type;
-    _model = model;
-    _number_of_cores = number_of_cores;
-    _maximum_clock_speed = maximum_clock_speed;
-    _cache_memory = cache_memory;
-    _socket = socket;
-    _frequency = frequency;
+
 }
 
-CPU::CPU(const CPU &other)
-{
-    _manufacturer = other._manufacturer;
+CPU::CPU(const CPU &other) : ProcessorUnit(other._manufacturer,other._model)
+{   
+   //_manufacturer = other._manufacturer;
     _type = other._type;
-    _model = other._model;
+    //_model = other._model;
     _number_of_cores = other._number_of_cores;
     _maximum_clock_speed = other._maximum_clock_speed;
     _cache_memory = other._cache_memory;

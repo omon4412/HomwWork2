@@ -21,7 +21,7 @@ public:
     MemoryType GetMemoryType() const;
     GPU operator=(const GPU &other);
 private:
-    int Initialization();
+    int Initialization() override;
     GPU PullOut();
     void InsertIn(const GPU &gpu);
 };

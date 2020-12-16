@@ -1,19 +1,13 @@
 #include "processorunit.hpp"
 
-ProcessorUnit::ProcessorUnit()
+ProcessorUnit::ProcessorUnit() : _manufacturer(""), _model("")
 {
 
 }
 
-int ProcessorUnit::Initialization()
+ProcessorUnit::ProcessorUnit(std::string manufacturer, std::string model) :
+    _manufacturer(manufacturer), _model(model)
 {
-    if((_manufacturer == "") && (_model == ""))
-    {
-        return 1;
-    }
-    else if((_manufacturer == "") || (_model == ""))
-    {
-        return 2;
-    }
-    return 0;
+
 }
+
