@@ -1,4 +1,3 @@
-#include <iomanip>
 #include "cpu.hpp"
 #include "PostCodes.hpp"
 
@@ -20,9 +19,7 @@ CPU::CPU(std::string manufacturer, std::string type, std::string model,
 
 CPU::CPU(const CPU &other) : ProcessorUnit(other._manufacturer,other._model)
 {   
-   //_manufacturer = other._manufacturer;
     _type = other._type;
-    //_model = other._model;
     _number_of_cores = other._number_of_cores;
     _maximum_clock_speed = other._maximum_clock_speed;
     _cache_memory = other._cache_memory;

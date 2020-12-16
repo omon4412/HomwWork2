@@ -8,6 +8,7 @@ class CPU : ProcessorUnit
 {
 private:
     friend class ComputerCase;
+    friend class Computer;
     std::string _type;
     int _number_of_cores;
     double _maximum_clock_speed;

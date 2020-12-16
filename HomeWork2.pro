@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         MemoryType.cpp \
+        computer.cpp \
         computercase.cpp \
         cpu.cpp \
         gpu.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
 HEADERS += \
     MemoryType.hpp \
     PostCodes.hpp \
+    computer.hpp \
     computercase.hpp \
     cpu.hpp \
     gpu.hpp \

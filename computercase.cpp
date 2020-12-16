@@ -1,31 +1,7 @@
 #include <iostream>
-#include <sstream>
-#include <string>
 #include "computercase.hpp"
 
-std::string ComputerCase::Start()
-{
-    int post_result = Initialization();
-    if(post_result == 0)
-    {
-        _isActive = true;
-        return "Запуск произошёл";
-    }
-    std::stringstream stream;
-    stream << std::hex << post_result;
-    std::string result(stream.str());
-    for (auto &c : result)
-        c = std::toupper(c);
-    return "0x" + result;
-}
-
-std::string ComputerCase::Stop()
-{
-    _isActive = false;
-    return "Выключение";
-}
-
-CPU ComputerCase::PullOutCPU()
+CPU Computer::PullOutCPU()
 {
     _isActive = false;
     return  cpu.PullOut();
@@ -37,13 +13,13 @@ GPU ComputerCase::PullOutGPU()
     return  gpu.PullOut();
 }
 
-RAM ComputerCase::PullOutRAM()
+RAM Computer::PullOutRAM()
 {
     _isActive = false;
     return  ram.PullOut();
 }
 
-void ComputerCase::InsertAccessory(const CPU &cpu)
+void Computer::InsertAccessory(const CPU &cpu)
 {
     this->cpu.InsertIn(cpu);
 }
@@ -53,7 +29,7 @@ void ComputerCase::InsertAccessory(const GPU &gpu)
     this->gpu.InsertIn(gpu);
 }
 
-void ComputerCase::InsertAccessory(const RAM &ram)
+void Computer::InsertAccessory(const RAM &ram)
 {
     this->ram.InsertIn(ram);
 }
@@ -61,41 +37,31 @@ void ComputerCase::InsertAccessory(const RAM &ram)
 int ComputerCase::Initialization()
 {
     if(cpu.Initialization() != 0)
-    return cpu.Initialization();
+        return cpu.Initialization();
     if(ram.Initialization() != 0)
-    return ram.Initialization();
+        return ram.Initialization();
     if(gpu.Initialization() != 0)
-    return gpu.Initialization();
+        return gpu.Initialization();
     return 0;
 }
 
-ComputerCase::ComputerCase() : _name(""), _operationSystem(""),
-                                _size({100,50,100}), _color(TColor::WHITE),
-                                _isDvdDrive(false), _soundSystem(""),
-                                _SSDcapacity(0), _weight(7), _isActive(false),
-                                cpu(), gpu(), ram()
+ComputerCase::ComputerCase() : Computer(), _isDvdDrive(false), _soundSystem(""),
+                                                            _SSDcapacity(0), gpu()
 {
 
 }
 
-ComputerCase::ComputerCase(std::string name, std::string _operationSystem, CPU cpu, GPU gpu, RAM ram,
+ComputerCase::ComputerCase(std::string name, std::string operationSystem, CPU cpu, GPU gpu, RAM ram,
                            ComputerCase::TSize size, ComputerCase::TColor color, bool isDvdDrive,
-                           std::string soundSystem, int SSDcapacity, double weight)
+                           std::string soundSystem, int SSDcapacity, double weight) :
+                        Computer(name, operationSystem, cpu, ram, size, color, weight),
+                        _isDvdDrive(isDvdDrive), _soundSystem(soundSystem),
+                        _SSDcapacity(SSDcapacity)
 {
-    _name = name;
-    this->_operationSystem  = _operationSystem;
-    this->cpu = cpu;
     this->gpu = gpu;
-    this->ram = ram;
-    _size = size;
-    _color = color;
-    _isDvdDrive = isDvdDrive;
-    _soundSystem = soundSystem;
-    _SSDcapacity = SSDcapacity;
-    _weight = weight;
 }
 
-ComputerCase::ComputerCase(const ComputerCase &other)
+ComputerCase::ComputerCase(const ComputerCase &other) : Computer(other)
 {
     _name = other._name;
     this->_operationSystem  = other._operationSystem;
@@ -125,6 +91,7 @@ ComputerCase ComputerCase::operator=(const ComputerCase &other)
     _weight = other._weight;
     return *this;
 }
+
 
 std::ostream& operator<< (std::ostream &out, const ComputerCase &computerCase)
 {
@@ -159,45 +126,7 @@ std::ostream& operator<< (std::ostream &out, const ComputerCase &computerCase)
      return out;
 }
 
-void ComputerCase::SetName(const std::string name)
-{
-    _name = name;
-}
 
-std::string ComputerCase::GetName()
-{
-    return _name;
-}
-
-void ComputerCase::SetOperationSystem(const std::string os_name)
-{
-    _operationSystem = os_name;
-}
-
-std::string ComputerCase::GetOperationSystem()
-{
-    return _operationSystem;
-}
-
-void ComputerCase::SetSize(const ComputerCase::TSize size)
-{
-    _size = size;
-}
-
-ComputerCase::TSize ComputerCase::GetSize()
-{
-    return _size;
-}
-
-void ComputerCase::SetColor(const ComputerCase::TColor name)
-{
-    _name = name;
-}
-
-ComputerCase::TColor ComputerCase::GetColor()
-{
-    return _color;
-}
 
 void ComputerCase::TakeDvdDrive()
 {
@@ -233,25 +162,6 @@ void ComputerCase::SetSSDcapacity(const int size)
 int ComputerCase::GetSSDcapacity()
 {
     return _SSDcapacity;
-}
-
-void ComputerCase::SetWeight(const double weight)
-{
-    _weight = weight;
-}
-
-int ComputerCase::GetWeight()
-{
-    return _weight;
-}
-
-std::string ComputerCase::GetActiveStatus()
-{
-    if(_isActive)
-    {
-        return "Работает";
-    }
-    return "Не работает";
 }
 
 ComputerCase::~ComputerCase()

@@ -1,6 +1,8 @@
 #ifndef MEMORYTYPE_HPP
 #define MEMORYTYPE_HPP
+
 #include <iostream>
+
 enum MemoryType
 {
     None,

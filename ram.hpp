@@ -7,6 +7,7 @@ class RAM
 {
 private:
     friend class ComputerCase;
+    friend class Computer;
     int _size;
     MemoryType _type;
     int _frequency;

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <clocale>
+#include "computer.hpp"
 #include "computercase.hpp"
 #include "processorunit.hpp"
 
@@ -13,15 +14,17 @@ int main()
     GPU gpu("NVIDIA", "GeForce RTX 2060", 6, MemoryType::GDDR6);
     RAM ram(6, MemoryType::GDDR6, 2666);
     ComputerCase cp("Test", "Windows 10", cpu, gpu, ram, {100,50,100},
-                    ComputerCase::TColor::WHITE, true, "Нет", 512, 6);
-    ComputerCase testt;
+                    Computer::TColor::WHITE, true, "Нет", 512, 6);
+    Computer r;
+    r.InsertAccessory(cpu);
+    r.InsertAccessory(ram);
 
-
-    cout << test;
-    cout << cpu;
-    CPU r(cpu);
-    cout << r;
-    cout << cpu;
+    //cp.PullOutGPU();
+    //r.PullOutCPU();
+    cout << r.Start();
+    cout << cp.Start();
+    cout << r.GetActiveStatus();
+    cout << cp.GetActiveStatus();
 
     return 0;
 }
